@@ -2,13 +2,13 @@
 
 ## Installation
 * Via Git Clone
-        * Clone
-        * In Chrome, go to `chrome://extensions`
-        * Drop in `dist.crx` to install
+  * Clone
+  * In Chrome, go to `chrome://extensions`
+  * Drop in `dist.crx` to install
 * Via Download
-        * Download & extract
-        * In Chrome, go to `chrome://extensions`
-        * Drop in `dist.crx` to install
+  * Download & extract
+  * In Chrome, go to `chrome://extensions`
+  * Drop in `dist.crx` to install
 
 ## Usage
 

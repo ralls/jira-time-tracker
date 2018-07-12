@@ -1,0 +1,50 @@
+*, ::after, ::before {
+  box-sizing: border-box; }
+
+body {
+  margin: 0; }
+
+#jira-spy {
+  min-width: 350px;
+  max-width: 100%; }
+  #jira-spy .idx-js-btn {
+    padding: 3px 5px;
+    font-size: .75rem;
+    background-color: transparent;
+    border: 1px solid;
+    border-color: transparent;
+    border-radius: 1px;
+    color: #333536; }
+    #jira-spy .idx-js-btn:not(:last-child) {
+      margin-right: 5px; }
+    #jira-spy .idx-js-btn:focus {
+      outline: none; }
+    #jira-spy .idx-js-btn.idx-js-btn--primary {
+      background-color: #f0f0f0; }
+    #jira-spy .idx-js-btn.idx-js-btn--danger {
+      background-color: #f44336;
+      color: white; }
+  #jira-spy table {
+    display: table;
+    border-collapse: collapse;
+    border-spacing: 1px;
+    border-color: grey;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent; }
+    #jira-spy table th {
+      text-align: inherit; }
+    #jira-spy table th,
+    #jira-spy table td {
+      padding: .75rem;
+      vertical-align: top;
+      border-top: 1px solid #dee2e6; }
+    #jira-spy table thead th {
+      vertical-align: bottom;
+      border-bottom: 2px solid #dee2e6; }
+    #jira-spy table tbody tr:nth-of-type(odd) {
+      background-color: rgba(0, 0, 0, 0.05); }
+      #jira-spy table tbody tr:nth-of-type(odd) .idx-js-btn--primary {
+        background-color: white; }
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy9zdHlsZXMvZmUvYXBwLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSx1QkFBc0IsRUFDekI7O0FBQ0Q7RUFDSSxVQUFTLEVBQ1o7O0FBRUQ7RUFDSSxpQkFBZ0I7RUFDaEIsZ0JBQWUsRUFnRWxCO0VBbEVEO0lBTVEsaUJBQWdCO0lBQ2hCLGtCQUFpQjtJQUNqQiw4QkFBNkI7SUFDN0Isa0JBQWlCO0lBQ2pCLDBCQUF5QjtJQUN6QixtQkFBa0I7SUFDbEIsZUFBYyxFQWtCakI7SUE5Qkw7TUFlWSxrQkFBaUIsRUFDcEI7SUFoQlQ7TUFtQlksY0FBYSxFQUNoQjtJQXBCVDtNQXVCWSwwQkFBeUIsRUFDNUI7SUF4QlQ7TUEyQlksMEJBeEJLO01BeUJMLGFBQVksRUFDZjtFQTdCVDtJQWlDUSxlQUFjO0lBQ2QsMEJBQXlCO0lBQ3pCLG9CQUFtQjtJQUNuQixtQkFBa0I7SUFDbEIsWUFBVztJQUNYLGdCQUFlO0lBQ2Ysb0JBQW1CO0lBQ25CLDhCQUE2QixFQXlCaEM7SUFqRUw7TUEyQ1ksb0JBQW1CLEVBQ3RCO0lBNUNUOztNQWdEWSxnQkFBZTtNQUNmLG9CQUFtQjtNQUNuQiw4QkFBNkIsRUFDaEM7SUFuRFQ7TUFzRFksdUJBQXNCO01BQ3RCLGlDQUFnQyxFQUNuQztJQXhEVDtNQTJEWSxzQ0FBaUMsRUFLcEM7TUFoRVQ7UUE4RGdCLHdCQUF1QixFQUMxQiIsImZpbGUiOiJhcHAuY3NzIn0= */

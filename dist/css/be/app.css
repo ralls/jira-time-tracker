@@ -1,0 +1,36 @@
+#timetrack {
+  position: absolute;
+  top: 10px;
+  right: 35px; }
+  #timetrack #idx-track-time {
+    min-width: 101px;
+    display: inline-block;
+    padding: 5px 9px 4px 11px;
+    font-size: 0.85rem;
+    font-weight: 400;
+    font-family: Muli, Helvetica, Arial, sans-serif;
+    line-height: 1.2em;
+    border-radius: 3px;
+    text-align: center;
+    cursor: pointer; }
+    #timetrack #idx-track-time.btn-light {
+      color: #333B46;
+      background-color: #f5f5f5;
+      border-color: #f5f5f5; }
+      #timetrack #idx-track-time.btn-light:hover, #timetrack #idx-track-time.btn-light:focus, #timetrack #idx-track-time.btn-light:active {
+        background-color: #ccc;
+        border-color: #ccc; }
+    #timetrack #idx-track-time.btn-success {
+      color: #fff;
+      background-color: #3ca5d6;
+      border-color: #3ca5d6; }
+      #timetrack #idx-track-time.btn-success:hover, #timetrack #idx-track-time.btn-success:focus, #timetrack #idx-track-time.btn-success:active {
+        background-color: #2992c3;
+        border-color: #2992c3; }
+    #timetrack #idx-track-time:last-child {
+      margin-right: 0; }
+    #timetrack #idx-track-time .btn-close {
+      line-height: 13px;
+      vertical-align: text-top;
+      font-size: 20px; }
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy9zdHlsZXMvYmUvYXBwLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBUUE7RUFDSSxtQkFBa0I7RUFDbEIsVUFBUztFQUNULFlBQVcsRUFrRGQ7RUFyREQ7SUFNUSxpQkFBZ0I7SUFDaEIsc0JBQXFCO0lBQ3JCLDBCQUF5QjtJQUN6QixtQkFBa0I7SUFDbEIsaUJBQWdCO0lBQ2hCLGdEQUErQztJQUMvQyxtQkFBa0I7SUFDbEIsbUJBQWtCO0lBQ2xCLG1CQUFrQjtJQUNsQixnQkFBZSxFQXFDbEI7SUFwREw7TUFrQlksZUF4Qk07TUF5Qk4sMEJBdkJNO01Bd0JOLHNCQXhCTSxFQWdDVDtNQTVCVDtRQXlCZ0IsdUJBOUJEO1FBK0JDLG1CQS9CRCxFQWdDRjtJQTNCYjtNQStCWSxZQUFXO01BQ1gsMEJBeENNO01BeUNOLHNCQXpDTSxFQWlEVDtNQXpDVDtRQXNDZ0IsMEJBN0NFO1FBOENGLHNCQTlDRSxFQStDTDtJQXhDYjtNQTRDWSxnQkFBZSxFQUNsQjtJQTdDVDtNQWdEWSxrQkFBaUI7TUFDakIseUJBQXdCO01BQ3hCLGdCQUFlLEVBQ2xCIiwiZmlsZSI6ImFwcC5jc3MifQ== */

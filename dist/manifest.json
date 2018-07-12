@@ -2,11 +2,13 @@
     "name": "Jira Progress Spy",
     "description": "Track your progress with Jira Progress Spy",
     "version": "0.1.0",
-    "browser_action": {
+    "page_action": {
         "default_icon": "icon.png",
         "default_popup": "popup.html"
     },
     "permissions": [
+        "declarativeContent",
+        "tabs",
         "activeTab",
         "storage"
     ],
@@ -18,9 +20,18 @@
     "content_scripts": [
         {
             "matches": ["http://*/*", "https://*/*"],
-            "js": ["dist/content.js"],
+            "js": ["content/content.js"],
+            "css": ["css/be/app.css"],
             "run_at": "document_end"
         }
     ],
-    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+    "commands": {
+        "_execute_page_action": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+X",
+                "mac": "Command+Shift+X"
+            },
+            "description": "Open the extension popup"
+        }
+    }
 }

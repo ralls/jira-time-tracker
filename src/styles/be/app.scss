@@ -1,0 +1,62 @@
+$blue-400: #3ca5d6;
+$blue-500: #2992c3;
+$gray-800: #333B46;
+$gray-300: #ccc;
+$gray-100: #f5f5f5;
+$font-size-base: 13px;
+
+
+#timetrack {
+    position: absolute;
+    top: 10px;
+    right: 35px;
+
+    #idx-track-time {
+        min-width: 101px;
+        display: inline-block;
+        padding: 5px 9px 4px 11px;
+        font-size: 0.85rem;
+        font-weight: 400;
+        font-family: Muli, Helvetica, Arial, sans-serif;
+        line-height: 1.2em;
+        border-radius: 3px;
+        text-align: center;
+        cursor: pointer;
+
+        &.btn-light {
+            color: $gray-800;
+            background-color: $gray-100;
+            border-color: $gray-100;
+            
+            &:hover,
+            &:focus,
+            &:active {
+                background-color: $gray-300;
+                border-color: $gray-300;
+            }
+        }
+
+        &.btn-success {
+            color: #fff;
+            background-color: $blue-400;
+            border-color: $blue-400;
+    
+            &:hover,
+            &:focus,
+            &:active {
+                background-color: $blue-500;
+                border-color: $blue-500;
+            }
+        }
+        
+        &:last-child {
+            margin-right: 0;
+        }
+    
+        .btn-close {
+            line-height: 13px;
+            vertical-align: text-top;
+            font-size: 20px;
+        }
+    }
+}

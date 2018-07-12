@@ -1,16 +1,31 @@
 {
-  "name": "jira-progress-spy",
-  "version": "1.0.0",
+  "name": "jira-time-tracker",
+  "version": "0.1.0-alpha.1",
   "description": "",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack",
+    "build-fe:scss-compile": "node-sass-chokidar --source-map true src/styles/fe/ -o dist/css/fe",
+    "build-fe:autoprefixer": "postcss dist/css/fe/*.css --use autoprefixer -d dist/css/fe",
+    "build-be:scss-compile": "node-sass-chokidar --source-map true src/styles/be/ -o dist/css/be",
+    "build-be:autoprefixer": "postcss dist/css/be/*.css --use autoprefixer -d dist/css/be",
+    "sass:build-fe": "npm-run-all -p build-fe:*",
+    "sass:build-be": "npm-run-all -p build-be:*",
+    "sass:watch-fe": "chokidar 'src/styles/fe/**/*.scss' -c 'npm run sass:build-fe'",
+    "sass:watch-be": "chokidar 'src/styles/be/**/*.scss' -c 'npm run sass:build-be'",
+    "sass:watch": "npm-run-all -p sass:watch-*"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^8.6.4",
+    "chokidar-cli": "^1.2.0",
+    "moment": "^2.22.2",
+    "node-sass-chokidar": "^1.3.0",
+    "npm-run-all": "^4.1.3",
+    "postcss-cli": "^5.0.1",
     "webpack": "^4.14.0",
     "webpack-cli": "^3.0.8"
   }

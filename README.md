@@ -17,13 +17,17 @@ The progress tracking is completely independent from Jira, so start/stop as you 
 Keep in mind that it's up to you to start/stop the timer - it is not done for you.
 
 To toggle the menu, click the clock icon, or:
-Mac: `cmd + shift + x`
-Win: `ctrl + shift + x`
 
-**Issue #:**
+#### Mac
+`cmd + shift + x`
+
+#### Windows / Linux
+`ctrl + shift + x`
+
+#### Issue #
 A link to the issue that opens a separate tab
 
-**Time Spent:**
+#### Time Spent
 The sum of time spent in `days hours minutes seconds`
 
 Options:

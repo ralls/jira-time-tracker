@@ -1,0 +1,78 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+// Cool stuff happening here...
+#jira-spy {
+    min-width: 350px;
+    max-width: 100%;
+    $red: #f44336;
+
+    .idx-js-btn {
+        padding: 3px 5px;
+        font-size: .75rem;
+        background-color: transparent;
+        border: 1px solid;
+        border-color: transparent;
+        border-radius: 1px;
+        color: #333536;
+
+        &:not(:last-child) {
+            margin-right: 5px;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &.idx-js-btn--primary {
+            background-color: #f0f0f0;
+        }
+
+        &.idx-js-btn--danger {
+            background-color: $red;
+            color: white;
+        }
+    }
+
+    table {
+        display: table;
+        border-collapse: collapse;
+        border-spacing: 1px;
+        border-color: grey;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 1rem;
+        background-color: transparent;
+
+        th {
+            text-align: inherit;
+        }
+
+        th,
+        td {
+            padding: .75rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6;
+        }
+
+        thead th {
+            vertical-align: bottom;
+            border-bottom: 2px solid #dee2e6;
+        }
+
+        tbody tr:nth-of-type(odd) {
+            background-color: rgba(0,0,0,.05);
+
+            .idx-js-btn--primary {
+                background-color: white;
+            }
+        }
+    }
+}
+
+
+
+

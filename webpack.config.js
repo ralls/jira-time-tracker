@@ -1,9 +1,22 @@
 const path = require('path')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
-    entry: './src/content.js',
+    watch: true,
+    entry: {
+        content: './src/main.js',
+        popup: './src/popup.js'
+    },
     output: {
-        filename: 'content.js',
-        path: path.resolve(__dirname, 'src/dist')
-    }
+        filename: '[name].js',
+        path: path.resolve(__dirname, 'dist/content')
+    },
+    plugins: [
+        new UglifyJsPlugin({
+            uglifyOptions: {
+                compress: {},
+                mangle: {}
+            }
+        })
+    ]
 }

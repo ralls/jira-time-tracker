@@ -30,6 +30,8 @@ A link to the issue that opens a separate tab
 #### Time Spent
 The sum of time spent in `days hours minutes seconds`
 
-Options:
-Reset - Reset the timer to `0d 0h 0m 0s` on the issue. Useful for when you log time and want to start over.
-Delete - Delete the issue from the tracker. Useful if you're done with the project.
+#### Options:
+* Reset
+  *Reset the timer to `0d 0h 0m 0s` on the issue. Useful for when you log time and want to start over.
+* Delete
+  *Delete the issue from the tracker. Useful if you're done with the project.

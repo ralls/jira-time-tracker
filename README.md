@@ -12,8 +12,10 @@
 
 ## Usage
 
-When on a Jira issue page, the plugin will attempt to identify which issue and then create a progress button in the upper righthand corner of the page.
-The progress tracking is completely independent from Jira, so start/stop as you please.
+When on a Jira issue page, the plugin will attempt to identify which issue and then create a `Start Tracking Time` button in the upper right-hand corner of the page.
+
+Click `Start Tracking Time` to start the timer, and again to stop. If `Shift + Click` is used on `Pause Tracking Time`, the `Log Work` modal should pop up with the time in `days hours minutes` auto populated.
+
 Keep in mind that it's up to you to start/stop the timer - it is not done for you.
 
 To toggle the menu, click the clock icon, or:

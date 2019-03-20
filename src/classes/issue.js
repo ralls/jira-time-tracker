@@ -46,17 +46,17 @@ class Issue {
 
     createStartButton() {
         const content = document.getElementById('opsbar-jira.issue.tools')
-        // const parent = this.utilities.createElement('div', '', { id: this.settings.trackingGroup.id })
+        const started = this.inProgress()
         const parent = this.utilities.createElement('li', '', {
             'id': this.settings.trackingGroup.id,
             'class': 'toolbar-item'
         })
         const button = this.utilities.createElement(
             'button',
-            this.settings.trackingButton.inProgress[this.inProgress()].innerHTML,
+            this.settings.trackingButton.inProgress[started].innerHTML,
             {
                 'id': this.settings.trackingButton.id,
-                'class': 'toolbar-trigger',
+                'class': [ 'toolbar-trigger', started ? this.settings.trackingButton.inProgress[started].class : null ].join(' ').trim(),
                 'data-issue': this.issueId
             }
         )
@@ -143,11 +143,12 @@ class Issue {
         const button = document.getElementById(this.settings.trackingButton.id)
         if (button) {
             const progress = this.inProgress()
+            const buttonClass = this.settings.trackingButton.inProgress[progress].class
             button.innerHTML = this.settings.trackingButton.inProgress[progress].innerHTML
             if (progress) {
-                button.classList.add('btn-success')
+                button.classList.add(buttonClass)
             } else {
-                button.classList.remove('btn-success')
+                button.classList.remove(buttonClass)
             }
         }
     }

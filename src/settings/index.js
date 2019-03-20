@@ -13,7 +13,8 @@ const settings = {
         id: 'idx-track-time',
         inProgress: {
             true: {
-                innerHTML: 'Pause Tracking Time'
+                innerHTML: 'Pause Tracking Time',
+                class: 'btn-success'
             },
             false: {
                 innerHTML: 'Start Tracking Time'

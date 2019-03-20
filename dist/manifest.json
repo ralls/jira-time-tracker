@@ -1,7 +1,7 @@
 {
     "name": "Jira Progress Spy",
     "description": "Track your progress with Jira Progress Spy",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "page_action": {
         "default_icon": "icon.png",
         "default_popup": "popup.html"

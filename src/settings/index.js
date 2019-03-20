@@ -25,6 +25,12 @@ const settings = {
     },
     popup: {
         selector: 'jira-spy'
+    },
+    logWork: {
+        id: 'log-work',
+        input: {
+            id: 'log-work-time-logged'
+        }
     }
 }
 

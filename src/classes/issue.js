@@ -1,5 +1,5 @@
 class Issue {
-    constructor ({ storage = null, settings = {}, utilities = {}, actions = {}, getters = {}, mutations = {} }) {
+    constructor ({ storage = null, settings = {}, utilities = {}, actions = {}, getters = {}, mutations = {}, moment = {} }) {
         this.issueId = undefined
         this.storage = storage
         this.settings = settings
@@ -9,6 +9,7 @@ class Issue {
         this.mutations = mutations
         this.entries = null
         this.timeSpent = 0
+        this.moment = moment
     }
 
     initialize (callback) {
@@ -44,20 +45,24 @@ class Issue {
     }
 
     createStartButton() {
-        const content = document.getElementById('content')
-        const parent = this.utilities.createElement('div', '', { id: this.settings.trackingGroup.id })
+        const content = document.getElementById('opsbar-jira.issue.tools')
+        // const parent = this.utilities.createElement('div', '', { id: this.settings.trackingGroup.id })
+        const parent = this.utilities.createElement('li', '', {
+            'id': this.settings.trackingGroup.id,
+            'class': 'toolbar-item'
+        })
         const button = this.utilities.createElement(
             'button',
             this.settings.trackingButton.inProgress[this.inProgress()].innerHTML,
             {
                 'id': this.settings.trackingButton.id,
-                'class': 'btn-light',
+                'class': 'toolbar-trigger',
                 'data-issue': this.issueId
             }
         )
         button.addEventListener('click', this.handleClick.bind(this))
         parent.appendChild(button)
-        content.appendChild(parent)
+        content.prepend(parent)
         return true
     }
 
@@ -94,9 +99,41 @@ class Issue {
         this.save()
     }
 
+    getTimeWorked () {
+        const time = this.entries[this.issueId].reduce((carry, entry) => {
+          carry += entry.end - entry.start
+          return carry
+        }, 0)
+        let { _data } = this.moment.duration(time, 'seconds')
+        return `${_data.days}d ${_data.hours}h ${_data.minutes}m`
+    }
+
+    setTimeWorked () {
+        // Give Jira some time to load the log work from xhr.
+        setTimeout(() => {
+            const logWorkInput = document.getElementById(this.settings.logWork.input.id)
+            if (logWorkInput && this.entries[this.issueId]) {
+                const formattedTime = this.getTimeWorked()
+                logWorkInput.value = formattedTime
+            }
+        }, 500)
+    }
+
+    launchLogWork () {
+        const logWork = document.getElementById(this.settings.logWork.id)
+        if (logWork) {
+            logWork.click()
+            this.setTimeWorked()
+        }
+    }
+
     handleClick (e) {
         if (this.inProgress()) {
             this.endProgress()
+            // If shift+click, try to launch the 'log work' button.
+            if (e.shiftKey) {
+                this.launchLogWork()
+            }
         } else {
             this.startProgress()
         }
@@ -108,11 +145,9 @@ class Issue {
             const progress = this.inProgress()
             button.innerHTML = this.settings.trackingButton.inProgress[progress].innerHTML
             if (progress) {
-                button.classList.remove('btn-light')
                 button.classList.add('btn-success')
             } else {
                 button.classList.remove('btn-success')
-                button.classList.add('btn-light')
             }
         }
     }

@@ -13,19 +13,21 @@ $font-size-base: 13px;
         display: inline-block;
         text-shadow: none;
         cursor: pointer;
-
+        &:hover,
+        &:focus,
+        &:active {
+            outline: none;
+        }
         &.btn-success {
             color: #fff;
             background-color: $blue-400;
-
             &:hover,
             &:focus,
             &:active {
                 background-color: $blue-500;
-                outline: none;
             }
         }
-        
+
         &:last-child {
             margin-right: 0;
         }

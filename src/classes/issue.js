@@ -44,7 +44,7 @@ class Issue {
         }).length > 0
     }
 
-    createStartButton() {
+    async createStartButton () {
         const content = document.getElementById('opsbar-jira.issue.tools')
         const started = this.inProgress()
         const parent = this.utilities.createElement('li', '', {
@@ -63,16 +63,40 @@ class Issue {
         button.addEventListener('click', this.handleClick.bind(this))
         parent.appendChild(button)
         content.prepend(parent)
-        return true
+        return Promise.resolve(true)
+    }
+
+    setMutationObserver () {
+        const el = document.querySelector('.issue-navigator');
+        // Options for the observer (which mutations to observe)
+        const config = { attributes: true, childList: true, subtree: true }
+        // Callback function to execute when mutations are observed
+        const callback = function (mutations, observer) {
+            for (let mutation of mutations) {
+                if (mutation.type == 'childList') {
+                    const found = document.getElementById(this.settings.trackingButton.id)
+                    if (!found) {
+                        this.createStartButton()
+                    }
+                }
+            }
+        }.bind(this)
+        // Create an observer instance linked to the callback function
+        var observer = new MutationObserver(callback)
+        // Start observing the target node for configured mutations
+        observer.observe(el, config)
     }
 
     /**
      * Pulls the issueID from localStorage. If nothing found, sets one up.
      */
     setup () {
-        this.initialize(function () {
+        this.initialize(async function () {
             if (this.issueId) {
-                this.createStartButton()
+                const result = await this.createStartButton()
+                if (result) {
+                    this.setMutationObserver()
+                }
             }
         }.bind(this))
     }
@@ -143,7 +167,7 @@ class Issue {
         const button = document.getElementById(this.settings.trackingButton.id)
         if (button) {
             const progress = this.inProgress()
-            const buttonClass = this.settings.trackingButton.inProgress[progress].class
+            const buttonClass = this.settings.trackingButton.inProgress[true].class
             button.innerHTML = this.settings.trackingButton.inProgress[progress].innerHTML
             if (progress) {
                 button.classList.add(buttonClass)

@@ -14,7 +14,7 @@ const settings = {
         inProgress: {
             true: {
                 innerHTML: 'Pause Tracking Time',
-                class: 'btn-success'
+                class: 'active'
             },
             false: {
                 innerHTML: 'Start Tracking Time'

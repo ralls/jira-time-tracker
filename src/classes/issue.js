@@ -46,18 +46,22 @@ class Issue {
 
     async createStartButton () {
         const content = document.getElementById('opsbar-jira.issue.tools')
+        if (!content) {
+            return false
+        }
         const started = this.inProgress()
-        const parent = this.utilities.createElement('li', '', {
+        const parent = this.utilities.createElement('a', '', {
             'id': this.settings.trackingGroup.id,
-            'class': 'toolbar-item'
+            'class': 'aui-button toolbar-trigger'
         })
         const button = this.utilities.createElement(
-            'button',
+            'span',
             this.settings.trackingButton.inProgress[started].innerHTML,
             {
                 'id': this.settings.trackingButton.id,
-                'class': [ 'toolbar-trigger', started ? this.settings.trackingButton.inProgress[started].class : null ].join(' ').trim(),
-                'data-issue': this.issueId
+                'class': [ started ? this.settings.trackingButton.inProgress[started].class : null ].join(' ').trim(),
+                'data-issue': this.issueId,
+                'aria-role': 'button'
             }
         )
         button.addEventListener('click', this.handleClick.bind(this))
@@ -67,7 +71,7 @@ class Issue {
     }
 
     setMutationObserver () {
-        const el = document.querySelector('.issue-navigator');
+        let el = document.querySelector('.issue-navigator');
         // Options for the observer (which mutations to observe)
         const config = { attributes: true, childList: true, subtree: true }
         // Callback function to execute when mutations are observed
@@ -84,6 +88,12 @@ class Issue {
         // Create an observer instance linked to the callback function
         var observer = new MutationObserver(callback)
         // Start observing the target node for configured mutations
+        if (!el) {
+            el = document.querySelector('#issue-content')
+            if (!el) {
+                return false
+            }
+        }
         observer.observe(el, config)
     }
 

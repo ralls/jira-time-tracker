@@ -1,4 +1,4 @@
-$blue-400: #3ca5d6;
+$blue-400: #344563;
 $blue-500: #2992c3;
 $gray-800: #333B46;
 $gray-300: #ccc;
@@ -8,34 +8,24 @@ $font-size-base: 13px;
 
 #timetrack {
 
+    padding: 0;
+
     #idx-track-time {
         min-width: 101px;
         display: inline-block;
         text-shadow: none;
+        padding: 4px 10px;
         cursor: pointer;
+        user-select: none;
         &:hover,
         &:focus,
         &:active {
             outline: none;
         }
-        &.btn-success {
+        &.active {
             color: #fff;
             background-color: $blue-400;
-            &:hover,
-            &:focus,
-            &:active {
-                background-color: $blue-500;
-            }
         }
 
-        &:last-child {
-            margin-right: 0;
-        }
-    
-        .btn-close {
-            line-height: 13px;
-            vertical-align: text-top;
-            font-size: 20px;
-        }
     }
 }

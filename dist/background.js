@@ -4,7 +4,7 @@ chrome.runtime.onInstalled.addListener(function () {
             conditions: [
                 new chrome.declarativeContent.PageStateMatcher({
                     pageUrl: {
-                        hostContains: 'jira.idx.local'
+                        hostContains: 'jira.hq.idx.org'
                     }
                 }),
             ],
